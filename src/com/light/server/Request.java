@@ -106,7 +106,7 @@ public class Request {
 			String value = kv[1] == null ? null : this.decode(kv[1].trim(), CHARSET);
 			
 			if (!this.parameterMap.containsKey(key)) {
-				this.parameterMap.put(key, new ArrayList<>());
+				this.parameterMap.put(key, new ArrayList<String>());
 			}
 			
 			this.parameterMap.get(key).add(value);
@@ -144,7 +144,6 @@ public class Request {
 	/**
 	 * ½âÂëÖĞÎÄ
 	 * @param value
-	 * @param code
 	 * @return
 	 */
 	private String decode(String value, String charset) {
